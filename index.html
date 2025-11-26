@@ -16,7 +16,7 @@
                     <span class="icon-block"></span>
                     <span class="icon-block"></span>
                 </div>
-                <span class="logo-text">Portfolio</span>
+                <span class="logo-text">Chule Mabunu</span>
             </div>
             <ul class="nav-menu">
                 <li class="dropdown">
@@ -25,7 +25,10 @@
                 <li class="dropdown">
                     <a href="#about">ABOUT</a>
                 </li>
-                <li><a href="#work">MY WORK</a></li>
+                <li><a href="#about">FEATURES</a></li>
+                <li>
+                    <a href="#education-skills">SKILLS</a>
+                </li>
                 <li><a href="#contact" class="contact-btn">CONTACT</a></li>
             </ul>
         </div>
@@ -35,15 +38,15 @@
         <div class="hero-content">
             <h1>Leading with<br>precision.<br>Serving with heart.</h1>
             <div class="featured-label">
-                <span>FEATURED EXPERIENCE</span>
+                <a href="./CV Chule 2025 .pdf" target="_blank" class="view-cv-btn">VIEW CV</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="./ChuleMain.jpeg" alt="Restaurant interior">
+            <img src="./headshot.jpeg" alt="Professional headshot of Chule Mabunu">
         </div>
     </section>
 
-    <section class="experience-section">
+    <section class="experience-section" id="experience">
         <div class="section-header">
             <h2>Experience</h2>
         </div>
@@ -148,5 +151,109 @@
             </div>
         </div>
     </section>
+    
+    <section class="features-section" id="about">
+        <div class="features-header">
+            <h2>Built on trust.<br>Chosen for performance.</h2>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="./zozi.png" alt="Zozibini Tunzi">
+                </div>
+                <div class="feature-content">
+                    <h3>Excellence in Service</h3>
+                    <p>Served distinguished guests including Zozibini Tunzi, former Miss South Africa and Miss Universe 2019, delivering exceptional hospitality experiences that leave lasting impressions on high-profile clientele.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="./chefbonga.png" alt="Executive Chef Bonga Williams">
+                </div>
+                <div class="feature-content">
+                    <h3>Meaningful Connections</h3>
+                    <p>Met and connected with Executive Chef Bonga Williams from Tempo Luxury, building relationships with exceptional culinary talents and learning from the best in the industry while delivering world-class dining experiences.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="./sibamntongana.png" alt="Chef Siba Mtongana">
+                </div>
+                <div class="feature-content">
+                    <h3>Industry Mentorship</h3>
+                    <p>I met Chef Siba, an international multi-award winning culinary extraordinaire. We discussed work-life balance and maintaining healthy relationships in our demanding industry. A full circle moment - I grew up watching her show with my mom and sister.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="./articlefeature.png" alt="Masterchef Moses Moloi">
+                </div>
+                <div class="feature-content">
+                    <h3>Media Recognition</h3>
+                    <p>Thrilled to have been featured in the Daily Maverick as part of a spotlight on Gigi Restaurant's approach to food and wine pairing. As Front of House Manager, I take pride in curating seamless dining experiences where exceptional service meets bold, expressive cuisine.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-section">
+            <blockquote class="testimonial">
+                "Working under phenomenal Chef Moses Moloi has been transformative. His mentorship and the opportunity to be featured in major publications like Daily Maverick showcase the caliber of professionals I've had the privilege to learn from. These moments remind me why I love hospitality: connecting people through flavour, storytelling, and thoughtful attention to detail."
+            </blockquote>
+        </div>
+    </section>
+
+
+    <section class="education-skills-section" id="education-skills">
+        <div class="education-container">
+            <div class="education-content">
+                <h2>EDUCATION</h2>
+                <div class="education-entry">
+                    <span class="edu-institution">Stenden University. Port Alfred, South Africa</span>
+                    <p><strong>Field of Study:</strong> BCom Degree in Hospitality Management</p>
+                    <p><strong>Start Date:</strong> February 2019</p>
+                    <p><strong>Status:</strong> Complete</p>
+                </div>
+            </div>
+            <div class="skills-content">
+                <h2>TECHNICAL SKILLS</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">MICROSOFT WORD</span>
+                    <span class="skill-tag">EXCEL</span>
+                    <span class="skill-tag">POWERPOINT</span>
+                    <span class="skill-tag">ONENOTE</span>
+                    <span class="skill-tag">PILOT</span>
+                    <span class="skill-tag">SEMPER</span>
+                    <span class="skill-tag">GAAP</span>
+                    <span class="skill-tag">MICROS</span>
+                    <span class="skill-tag">VSDC VIDEO EDITOR</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Ready to connect?</h2>
+        <p>I look forward to hearing from you.</p>
+        <a href="mailto:chulemabunu@gmail.com" class="contact-btn" style="color: white !important;">Email me</a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> Chule Mabunu. All rights reserved.</p>
+            <p>
+                Website developed and designed by 
+                <a href="https://www.linkedin.com/in/mathabo-mabunu-6ba958218/?originalSubdomain=za" target="_blank">Mathabo Mabunu</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
