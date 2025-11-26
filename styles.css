@@ -158,7 +158,7 @@ body {
 
 .featured-label {
     position: absolute;
-    bottom: 4rem;
+    bottom: 2rem;
     left: 3rem;
     /* Styles for the new View CV button */
 }
@@ -211,6 +211,7 @@ body {
 }
 
 .section-header {
+    border-bottom: 0.8px solid var(--primary);
     padding: 6rem 4rem 4rem 4rem;
     background-color: #f0f2f8;
 }
@@ -334,6 +335,7 @@ body {
 /* Features/About/My Work Section */
 /* Features Section */
 .features-section {
+    border-top: 0.8px solid var(--primary);
     background-color: #f0f2f8;
     padding: 6rem 4rem;
 }
@@ -406,6 +408,7 @@ body {
 }
 
 .testimonial-section {
+    border-top: 0.8px solid var(--primary);
     background-color: #f0f2f8;
     max-width: 1200px;
     margin: 0 auto;
@@ -438,6 +441,7 @@ body {
 
 /* NEW: Education and Skills Section Styles */
 .education-skills-section {
+    border-top: 0.8px solid var(--primary);
     background-color: #f0f2f8; 
     padding: 6rem 4rem;
 }
@@ -501,7 +505,7 @@ body {
 
 /* Contact/Footer Section (New) */
 .contact-section {
-    border-bottom: 0.8px solid white;
+    border-bottom: 0.5px solid white;
     background-color: var(--primary);
     color: white;
     padding: 4rem 3rem;
@@ -550,41 +554,75 @@ body {
     margin: 0.3rem 0;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .hero-content {
-        padding: 0 4rem 0 2rem;
-    }
-}
 
+/* ========================================= */
+/* Responsive Design (Mobile & Tablet)       */
+/* ========================================= */
+
+/* Tablet (968px and down) */
 @media (max-width: 968px) {
     .nav-container {
         padding: 1rem 2rem;
     }
     
+    /* Mobile Menu setup */
     .nav-menu {
-        gap: 1.5rem;
+        /* Default mobile state: hidden off-screen */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: right var(--transition-duration) ease-in-out;
     }
-    
+
+    /* Active mobile state: slide in */
+    .nav-menu.active {
+        right: 0;
+        /* Ensure mobile menu overlay has backdrop blur effect */
+        background: rgba(0, 0, 128, 0.95);
+        backdrop-filter: blur(5px);
+    }
+
     .nav-menu a {
-        font-size: 0.7rem;
+        font-size: 1.5rem;
     }
-    
+
+    .contact-btn {
+        padding: 0.8rem 3rem;
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+
+    /* HERO SECTION */
     .hero {
         grid-template-columns: 1fr;
         height: auto;
-        /* Adjusted padding top for mobile view */
         padding-top: 5rem;
     }
     
     .hero-content {
-        padding: 4rem 2rem 4rem 2rem;
-        min-height: 60vh;
+        padding: 4rem 2rem;
+        min-height: 50vh;
         border-right: none;
+        order: 2; /* Put content below image on mobile */
     }
     
     .hero-content h1 {
         font-size: 3.5rem;
+    }
+
+    .hero-image {
+        height: 50vh;
+        order: 1; /* Put image above content on mobile */
     }
     
     .featured-label {
@@ -593,49 +631,110 @@ body {
         left: auto;
         bottom: auto;
     }
-    
-    .hero-image {
-        height: 50vh;
+
+    /* EXPERIENCE SECTION - Stack content vertically */
+    .section-header {
+        padding: 4rem 2rem 3rem 2rem;
     }
 
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .experience-card {
+        grid-template-columns: 1fr; 
+    }
+
+    .experience-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
+    /* Reverse the order so image is always on top on mobile */
+    .experience-card:nth-child(even) .experience-image {
+        order: 1;
+    }
+
+    .experience-card:nth-child(even) .experience-content {
+        order: 2;
+    }
+
+    .experience-content {
+        padding: 3rem 2rem;
+    }
+    
+    .experience-content h2 {
+        font-size: 2rem;
+        max-width: 100%;
+    }
+    
+    .experience-highlights li {
+        font-size: 1rem;
+    }
+
+    /* FEATURES/ABOUT SECTION - Single column */
     .features-section {
         padding: 4rem 2rem;
     }
-    
+
     .features-header h2 {
         font-size: 3rem;
     }
     
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
         gap: 2rem;
     }
     
+    .feature-image {
+        height: 250px;
+    }
+
+    .feature-content h3 {
+        font-size: 1.5rem;
+    }
+
     .testimonial {
         font-size: 1.2rem;
         padding: 0 1rem;
     }
+    
+    /* EDUCATION & SKILLS - Single column */
+    .education-skills-section {
+        padding: 4rem 2rem;
+    }
+
+    .education-container {
+        grid-template-columns: 1fr; 
+        gap: 3rem;
+    }
+
+    .education-content h2, .skills-content h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .edu-institution {
+        font-size: 1.2rem;
+    }
+    
+    .education-entry p {
+        font-size: 1rem;
+    }
+
+    /* FOOTER */
+    .site-footer {
+        padding: 1rem 1.5rem;
+        font-size: 0.75rem;
+    }
 }
 
+/* Small Mobile Screens (640px and down) */
 @media (max-width: 640px) {
+    .nav-container {
+        padding: 0.8rem 1.5rem;
+    }
+
     .logo-text {
         font-size: 1.4rem;
-    }
-    
-    .nav-menu {
-        gap: 1rem;
-    }
-    
-    .nav-menu a {
-        font-size: 0.65rem;
-    }
-    
-    .contact-btn {
-        padding: 0.5rem 1.2rem;
-    }
-    
-    .hero-content {
-        padding: 3rem 1.5rem;
     }
     
     .hero-content h1 {
@@ -643,27 +742,29 @@ body {
         letter-spacing: -1px;
     }
 
-    .section-header {
-        padding: 4rem 2rem 3rem 2rem;
+    .view-cv-btn {
+        font-size: 0.65rem;
+        padding: 0.7rem 1.5rem;
     }
     
     .experience-content {
-        padding: 3rem 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .experience-content h2 {
+        font-size: 1.5rem;
     }
 
     .features-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .education-content h2, .skills-content h2 {
         font-size: 2rem;
     }
     
-    .feature-content h3 {
-        font-size: 1.4rem;
-    }
-    
-    .feature-content p {
-        font-size: 0.95rem;
-    }
-    
-    .testimonial {
-        font-size: 1.1rem;
+    .skill-tag {
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
     }
 }
