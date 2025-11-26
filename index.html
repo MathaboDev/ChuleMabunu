@@ -251,8 +251,37 @@
         </div>
     </footer>
 
+    <!-- Script to handle mobile menu and copyright year -->
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Mobile menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+
+            // Function to toggle the menu state
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                // Toggle body scroll lock to prevent scrolling when menu is open
+                document.body.classList.toggle('menu-open', navMenu.classList.contains('active'));
+            }
+
+            // Toggle menu on hamburger click
+            hamburger.addEventListener('click', toggleMenu);
+
+            // Close menu when a link is clicked (for navigation)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
