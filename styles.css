@@ -746,6 +746,7 @@ body {
     }
 
     .hero-content h1 {
+        padding-top: 25px;
         font-size: 2.2rem;
         line-height: 1.1;
         letter-spacing: -1px;
@@ -933,4 +934,5 @@ body {
         padding: 0.6rem 1rem;
         font-size: 0.75rem;
     }
+
 }
